@@ -1,5 +1,4 @@
 import * as actionTypes from '../../action/settings/actionTypes'
-import _ from 'lodash'
 
 const initialState = {
     open_loader: true,

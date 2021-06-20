@@ -24,25 +24,27 @@ class ListEmployees extends Component {
                         <h3 className="d-inline">Employees Management</h3>
                         <AddEmployee />
                     </div>
-                    <Table users={this.props.users} />
+                    <div style={{ minHeight: '600px' }}>
+                        <Table users={this.props.users} />
+                    </div>
                     {this.props.showLoader(false)}
-                    <Pagination size="sm">
-                        <Pagination.First />
-                        <Pagination.Prev />
-                        <Pagination.Item>{1}</Pagination.Item>
-                        <Pagination.Ellipsis />
-
-                        <Pagination.Item>{10}</Pagination.Item>
-                        <Pagination.Item>{11}</Pagination.Item>
-                        <Pagination.Item active>{12}</Pagination.Item>
-                        <Pagination.Item>{13}</Pagination.Item>
-                        <Pagination.Item disabled>{14}</Pagination.Item>
-
-                        <Pagination.Ellipsis />
-                        <Pagination.Item>{20}</Pagination.Item>
-                        <Pagination.Next />
-                        <Pagination.Last />
-                    </Pagination>
+                    <div style={{position: 'relative',left: '35%'}}>
+                        <Pagination size="sm">
+                            <Pagination.First />
+                            <Pagination.Prev />
+                            <Pagination.Item>{1}</Pagination.Item>
+                            <Pagination.Ellipsis />
+                            <Pagination.Item>{10}</Pagination.Item>
+                            <Pagination.Item>{11}</Pagination.Item>
+                            <Pagination.Item active>{12}</Pagination.Item>
+                            <Pagination.Item>{13}</Pagination.Item>
+                            <Pagination.Item disabled>{14}</Pagination.Item>
+                            <Pagination.Ellipsis />
+                            <Pagination.Item>{20}</Pagination.Item>
+                            <Pagination.Next />
+                            <Pagination.Last />
+                        </Pagination>
+                    </div>
                 </div>
             </div >
         )
