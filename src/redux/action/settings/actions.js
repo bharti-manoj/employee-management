@@ -9,20 +9,38 @@ export const showLoader = (flag) => {
     }
 }
 
-export const changePage = (page) => {
+export const setActivePage = (activePage) => {
     return dispatch => {
         dispatch({
-            type: actionTypes.PAGE_CHANGE,
-            payload: page
+            type: actionTypes.ACTIVE_PAGE,
+            payload: activePage
         })
     }
 }
 
-export const changeTotal = (total) => {
+export const setCountPerPage = (countPerPage) => {
     return dispatch => {
         dispatch({
-            type: actionTypes.TOTAL_PAGE,
-            payload: total
+            type: actionTypes.COUNT_PER_PAGE,
+            payload: countPerPage
+        })
+    }
+}
+
+export const setPageCount = (pageCount) => {
+    return dispatch => {
+        dispatch({
+            type: actionTypes.PAGE_COUNT,
+            payload: pageCount
+        })
+    }
+}
+
+export const setSearchText = (searchText) => {
+    return dispatch => {
+        dispatch({
+            type: actionTypes.SEARCH_TEXT,
+            payload: searchText
         })
     }
 }

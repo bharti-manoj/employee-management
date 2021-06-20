@@ -2,10 +2,10 @@ import * as actionTypes from '../../action/settings/actionTypes'
 
 const initialState = {
     open_loader: true,
-    pages: {
-        total: null,
-        active: null
-    }
+    page_count: 0,
+    active_page: 0,
+    count_per_page: 0,
+    searchText: ''
 }
 
 const SettingsReducer = (state = initialState, action = {}) => {
@@ -15,15 +15,25 @@ const SettingsReducer = (state = initialState, action = {}) => {
                 ...state,
                 open_loader: action.payload
             }
-        case actionTypes.PAGE_CHANGE:
+        case actionTypes.ACTIVE_PAGE:
             return {
                 ...state,
-                pages: {...state.pages, active: action.payload}
+                active_page: action.payload
             }
-        case actionTypes.TOTAL_PAGE:
+        case actionTypes.COUNT_PER_PAGE:
             return {
                 ...state,
-                pages: {...state.pages, total: action.payload}
+                count_per_page: action.payload
+            }
+        case actionTypes.PAGE_COUNT:
+            return {
+                ...state,
+                page_count: action.payload
+            }
+        case actionTypes.SEARCH_TEXT:
+            return {
+                ...state,
+                searchText: action.payload
             }
         default:
             return state;

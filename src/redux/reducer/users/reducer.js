@@ -2,7 +2,8 @@ import * as actionTypes from '../../action/users/actionTypes'
 import _ from 'lodash'
 
 const initialState = {
-    users: []
+    users: [],
+    count: 0
 }
 
 const UsersReducer = (state = initialState, action = {}) => {
@@ -10,12 +11,14 @@ const UsersReducer = (state = initialState, action = {}) => {
         case actionTypes.FETCH_USERS_SUCCESS:
             return {
                 ...state,
-                users: [...state.users]
+                users: [...state.users],
+                count: state.users.length
             }
         case actionTypes.ADD_USER_SUCCESS:
             return {
                 ...state,
-                users: [...state.users, action.payload]
+                users: [...state.users, action.payload],
+                count: state.count + 1
             }
         case actionTypes.UPDATE_USER_SUCCESS:
             const users = state.users
@@ -31,7 +34,8 @@ const UsersReducer = (state = initialState, action = {}) => {
                 ...state,
                 users: _.remove(state.users, function (user) {
                     if (user.id !== action.payload) return user
-                })
+                }),
+                count: state.count - 1
             }
         default:
             return state;

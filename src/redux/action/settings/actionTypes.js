@@ -1,3 +1,5 @@
 export const SHOW_LOADER = 'SHOW_LOADER'
-export const PAGE_CHANGE = 'PAGE_CHANGE'
-export const TOTAL_PAGE = 'TOTAL_PAGE'
+export const ACTIVE_PAGE= 'ACTIVE_PAGE'
+export const COUNT_PER_PAGE= 'COUNT_PER_PAGE'
+export const PAGE_COUNT = 'PAGE_COUNT'
+export const SEARCH_TEXT = 'SEARCH_TEXT'
