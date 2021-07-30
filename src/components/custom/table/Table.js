@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import DeleteEmployee from 'src/components/employees/deleteemployee/DeleteEmployee'
 import GetEmployee from 'src/components/employees/getemployee/GetEmployee'
 import UpdateEmployee from 'src/components/employees/updateemployee/UpdateEmployee'
@@ -6,18 +6,18 @@ import UpdateEmployee from 'src/components/employees/updateemployee/UpdateEmploy
 import './Table.css'
 
 function Table({ users, activePage, itemsCountPerPage, searchText }) {
-    const [newUsers, setNewUsers] = useState(users)
-    useEffect(() => {
-        if (searchText !== "") {
-            const newUsersList = users.filter(user => {
-                return Object.values(user).join(' ').toLocaleLowerCase().includes(searchText.toLocaleLowerCase())
-            })
-            setNewUsers(newUsersList)
-        } else {
-            setNewUsers(users)
-        }
+    // const [newUsers, setNewUsers] = useState(users)
+    // useEffect(() => {
+    //     if (searchText !== "") {
+    //         const newUsersList = users.filter(user => {
+    //             return Object.values(user).join(' ').toLocaleLowerCase().includes(searchText.toLocaleLowerCase())
+    //         })
+    //         setNewUsers(newUsersList)
+    //     } else {
+    //         setNewUsers(users)
+    //     }
 
-    }, [searchText])
+    // }, [searchText])
     return (
         <table className="table table-striped table-hover">
             <thead>
@@ -35,7 +35,7 @@ function Table({ users, activePage, itemsCountPerPage, searchText }) {
                 </tr>
             </thead>
             <tbody>
-                {newUsers.map((user, index) => (
+                {users.map((user, index) => (
                     index >= activePage * itemsCountPerPage - itemsCountPerPage && index < activePage * itemsCountPerPage ?
                         <tr key={user.id}>
                             <td>

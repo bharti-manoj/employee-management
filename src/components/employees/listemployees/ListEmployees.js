@@ -16,6 +16,7 @@ class ListEmployees extends Component {
 
     componentDidMount() {
         this.props.fetchUsers()
+        this.props.setActivePage(1)
         this.props.setCountPerPage(2)
         this.props.setPageCount(Math.ceil(this.props.users_count / 2))
     }
